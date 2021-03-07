@@ -1,0 +1,83 @@
+<div>
+
+    <div>
+        <form [formGroup]="AdvertiseForm">
+            <div>
+                <label>First Name</label><sup>*</sup>
+                <input formControlName="FirstName" type="text">
+            </div>
+            <div *ngIf="AdvertiseForm.controls.FirstName.invalid && (AdvertiseForm.controls.FirstName.dirty || AdvertiseForm.controls.FirstName.touched)">
+                <mat-error *ngIf="this.AdvertiseForm.controls.FirstName.errors.required">
+                    First Name is mandatory
+                </mat-error>
+                <mat-error *ngIf="this.AdvertiseForm.controls.FirstName.errors.pattern">
+                    Please enter valid First Name
+                </mat-error>
+            </div>
+            <!-- <mat-form-field class="example-full-width">
+                <mat-label>Favorite food</mat-label>
+                <input matInput placeholder="Ex. Pizza" value="Sushi">
+            </mat-form-field> -->
+            <div>
+                <label>Last Name</label><sup>*</sup>
+                <input formControlName="LastName" type="text">
+            </div>
+            <div *ngIf="AdvertiseForm.controls.LastName.invalid && (AdvertiseForm.controls.LastName.dirty || AdvertiseForm.controls.LastName.touched)">
+                <mat-error *ngIf="this.AdvertiseForm.controls.LastName.errors.required">
+                    Last Name is mandatory
+                </mat-error>
+                <mat-error *ngIf="this.AdvertiseForm.controls.LastName.errors.pattern">
+                    Please enter valid Last Name
+                </mat-error>
+            </div>
+            <div>
+                <label>Email</label><sup>*</sup>
+                <input formControlName="Email" type="text">
+            </div>
+            <div *ngIf="AdvertiseForm.controls.Email.invalid && (AdvertiseForm.controls.Email.dirty || AdvertiseForm.controls.Email.touched)">
+                <mat-error *ngIf="this.AdvertiseForm.controls.Email.errors.required">
+                    Email is mandatory
+                </mat-error>
+                <mat-error *ngIf="this.AdvertiseForm.controls.Email.errors.pattern">
+                    Please enter valid Email
+                </mat-error>
+            </div>
+            <div>
+                <label>Monthly Advertising Budget</label><sup>*</sup>
+                <input formControlName="MonthlyAdvertisingBudget" type="text">
+            </div>
+            <div *ngIf="AdvertiseForm.controls.MonthlyAdvertisingBudget.invalid && (AdvertiseForm.controls.MonthlyAdvertisingBudget.dirty || AdvertiseForm.controls.MonthlyAdvertisingBudget.touched)">
+                <mat-error *ngIf="this.AdvertiseForm.controls.MonthlyAdvertisingBudget.errors.required">
+                    Monthly Advertising Budget is mandatory
+                </mat-error>
+                <mat-error *ngIf="this.AdvertiseForm.controls.MonthlyAdvertisingBudget.errors.pattern">
+                    Please enter valid Monthly Advertising Budget
+                </mat-error>
+            </div>
+            <div>
+                <label>Phone number</label><sup>*</sup>
+                <input formControlName="Phonenumber" type="text">
+            </div>
+            <div *ngIf="AdvertiseForm.controls.Phonenumber.invalid && (AdvertiseForm.controls.Phonenumber.dirty || AdvertiseForm.controls.Phonenumber.touched)">
+                <mat-error *ngIf="this.AdvertiseForm.controls.Phonenumber.errors.required">
+                    Phone number is mandatory
+                </mat-error>
+                <mat-error *ngIf="this.AdvertiseForm.controls.Phonenumber.errors.pattern">
+                    Please enter valid Phone number
+                </mat-error>
+            </div>
+            <div>
+                <!-- <button (click)="OnPaymentClick()">Proceed Payment</button> -->
+                <button mat-raised-button (click)="OnPaymentClick()">Basic</button>
+            </div>
+            <!-- <p>
+                <mat-form-field appearance="legacy">
+                    <mat-label>Legacy form field</mat-label>
+                    <input matInput placeholder="Placeholder">
+                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    <mat-hint>Hint</mat-hint>
+                </mat-form-field>
+            </p> -->
+        </form>
+    </div>
+</div>
