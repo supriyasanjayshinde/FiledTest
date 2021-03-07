@@ -10,7 +10,6 @@ import { UsersStore } from './Users.store';
 })
 export class AppComponent {
   title = 'Filed';
-  shwAdd:boolean=true;
   Users=Array<AdvertisePayment>();
   constructor(private route:Router,private store:UsersStore){
     debugger;
@@ -18,12 +17,7 @@ export class AppComponent {
       this.Users=response
     })
   }
-  // RouteToAdvertise(){
-  //   debugger;
-    
-  // }
   AddUsers(){
-    this.shwAdd=false;
     this.route.navigate(['/app-advertise']);
   }
 }

@@ -1,18 +1,28 @@
-<h1>Filed</h1>
-<button (click)="AddUsers()">Add Users</button>
+<h1 style="font-style:normal;color:rgb(179, 94, 15);font-weight: 500;">Filed</h1>
 
-<mat-card class="example-card" *ngFor="let users of Users">
+<div style="float: left; width:100%;">
+    <button mat-raised-button style="background-color: rgb(222, 155, 135);" (click)="AddUsers()">Add User</button>
+</div>
+
+
+<router-outlet></router-outlet>
+
+
+<mat-card class="example-card" *ngFor="let users of Users" style="display: flex; margin-bottom: 15px;">
     <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>{{users.FirstName}} &nbsp; {{users.LastName}}</mat-card-title>
-        <mat-card-subtitle>{{users.PhoneNumber}}</mat-card-subtitle>
-        <mat-card-subtitle>{{users.Email}}</mat-card-subtitle>
+        <mat-card-title>{{users.FirstName}}&nbsp;{{users.LastName}}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
         <p>
-            {{users.MonthlyAdvertisingBudget}}
+           {{users.MonthlyAdvertisingBudget | currency:'INR'}} <b> Monthly Budget</b>  
+        </p>
+        <p>
+            {{users.Phonenumber}}
+        </p>
+        <p>
+            {{users.Email}}
         </p>
     </mat-card-content>
 </mat-card>
 
-<router-outlet></router-outlet>

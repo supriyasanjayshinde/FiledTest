@@ -1,10 +1,14 @@
 <div>
-
-    <div>
-        <form [formGroup]="AdvertiseForm">
-            <div>
-                <label>First Name</label><sup>*</sup>
-                <input formControlName="FirstName" type="text">
+<mat-card style="float: left;
+width: 500px;
+margin-right: 15px;
+clear: both;
+margin-top: 15px;">
+    <div  style="float: left;">
+        <form [formGroup]="AdvertiseForm" style="width: 500px;">
+            <div style="display: inline-block;">
+                <div style="width: 200px; float:left;"><label>First Name </label><sup>*</sup></div>
+                <input formControlName="FirstName" type="text" style="width:290px; float: left;">
             </div>
             <div *ngIf="AdvertiseForm.controls.FirstName.invalid && (AdvertiseForm.controls.FirstName.dirty || AdvertiseForm.controls.FirstName.touched)">
                 <mat-error *ngIf="this.AdvertiseForm.controls.FirstName.errors.required">
@@ -14,13 +18,9 @@
                     Please enter valid First Name
                 </mat-error>
             </div>
-            <!-- <mat-form-field class="example-full-width">
-                <mat-label>Favorite food</mat-label>
-                <input matInput placeholder="Ex. Pizza" value="Sushi">
-            </mat-form-field> -->
-            <div>
-                <label>Last Name</label><sup>*</sup>
-                <input formControlName="LastName" type="text">
+            <div style="display: inline-block;">
+                <div style="width: 200px; float:left;">  <label>Last Name </label><sup>*</sup></div>
+                <input formControlName="LastName" type="text"  style="width:290px; float: left;">
             </div>
             <div *ngIf="AdvertiseForm.controls.LastName.invalid && (AdvertiseForm.controls.LastName.dirty || AdvertiseForm.controls.LastName.touched)">
                 <mat-error *ngIf="this.AdvertiseForm.controls.LastName.errors.required">
@@ -30,9 +30,9 @@
                     Please enter valid Last Name
                 </mat-error>
             </div>
-            <div>
-                <label>Email</label><sup>*</sup>
-                <input formControlName="Email" type="text">
+            <div style="display: inline-block;">
+                <div style="width: 200px; float:left;"><label>Email </label><sup>*</sup></div>
+                <input formControlName="Email" type="text"  style="width:290px; float: left;">
             </div>
             <div *ngIf="AdvertiseForm.controls.Email.invalid && (AdvertiseForm.controls.Email.dirty || AdvertiseForm.controls.Email.touched)">
                 <mat-error *ngIf="this.AdvertiseForm.controls.Email.errors.required">
@@ -42,21 +42,21 @@
                     Please enter valid Email
                 </mat-error>
             </div>
-            <div>
-                <label>Monthly Advertising Budget</label><sup>*</sup>
-                <input formControlName="MonthlyAdvertisingBudget" type="text">
+            <div style="display: inline-block;">
+                <div style="width: 200px; float:left;"><label>Monthly Advertising Budget </label><sup>*</sup></div>
+                <input formControlName="MonthlyAdvertisingBudget" type="text" style="width:290px; float: left;" >
             </div>
             <div *ngIf="AdvertiseForm.controls.MonthlyAdvertisingBudget.invalid && (AdvertiseForm.controls.MonthlyAdvertisingBudget.dirty || AdvertiseForm.controls.MonthlyAdvertisingBudget.touched)">
                 <mat-error *ngIf="this.AdvertiseForm.controls.MonthlyAdvertisingBudget.errors.required">
                     Monthly Advertising Budget is mandatory
                 </mat-error>
-                <mat-error *ngIf="this.AdvertiseForm.controls.MonthlyAdvertisingBudget.errors.pattern">
+                <mat-error *ngIf="this.AdvertiseForm.controls.MonthlyAdvertisingBudget.errors.pattern || this.AdvertiseForm.controls.MonthlyAdvertisingBudget.value<=0">
                     Please enter valid Monthly Advertising Budget
                 </mat-error>
             </div>
             <div>
-                <label>Phone number</label><sup>*</sup>
-                <input formControlName="Phonenumber" type="text">
+                <div style="width: 200px; float:left;"><label>Phone Number </label><sup>*</sup></div>
+                <input formControlName="Phonenumber" type="text"  style="width:290px; float: left;">
             </div>
             <div *ngIf="AdvertiseForm.controls.Phonenumber.invalid && (AdvertiseForm.controls.Phonenumber.dirty || AdvertiseForm.controls.Phonenumber.touched)">
                 <mat-error *ngIf="this.AdvertiseForm.controls.Phonenumber.errors.required">
@@ -66,18 +66,11 @@
                     Please enter valid Phone number
                 </mat-error>
             </div>
-            <div>
-                <!-- <button (click)="OnPaymentClick()">Proceed Payment</button> -->
-                <button mat-raised-button (click)="OnPaymentClick()">Basic</button>
+            <div style="display: inline-block; margin-top: 15px;;">
+                <div style="width: 200px; float:left;">&nbsp;</div>
+                <button mat-raised-button style="background-color: burlywood;align-content: center;" (click)="OnPaymentClick()">Procees Payment</button>
             </div>
-            <!-- <p>
-                <mat-form-field appearance="legacy">
-                    <mat-label>Legacy form field</mat-label>
-                    <input matInput placeholder="Placeholder">
-                    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                    <mat-hint>Hint</mat-hint>
-                </mat-form-field>
-            </p> -->
         </form>
     </div>
+</mat-card>
 </div>
